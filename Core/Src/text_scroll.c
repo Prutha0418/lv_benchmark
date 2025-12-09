@@ -105,8 +105,8 @@ void text_scroll(void)
     lv_obj_align(title, LV_ALIGN_TOP_MID, 0, 0);
 
     // --- Body text ---
-    lv_obj_t *body = lv_label_create(text_container);
-    lv_label_set_text(body,
+    lv_obj_t *text = lv_label_create(text_container);
+    lv_label_set_text(text,
         "\n"
         "          The STM32U5G9J-DK2 Discovery kit is a complete demonstration and "
         "development platform for the STM32U5G9ZJT6Q microcontroller, featuring "
@@ -157,12 +157,12 @@ void text_scroll(void)
         "documentation can be downloaded from www.st.com.\n\n"
     );
 
-    lv_obj_set_style_text_font(body, &lv_font_calibri_regular_25, 0);
-    lv_obj_set_style_text_color(body, lv_color_hex(0x000000), 0);
-    lv_obj_set_width(body, 800);
-    lv_label_set_long_mode(body, LV_LABEL_LONG_WRAP);
-    lv_obj_set_style_text_align(body, LV_TEXT_ALIGN_LEFT, 0);
-    lv_obj_align_to(body, title, LV_ALIGN_OUT_BOTTOM_MID, 0, 20);
+    lv_obj_set_style_text_font(text, &lv_font_calibri_regular_25, 0);
+    lv_obj_set_style_text_color(text, lv_color_hex(0x000000), 0);
+    lv_obj_set_width(text, 800);
+    lv_label_set_long_mode(text, LV_LABEL_LONG_WRAP);
+    lv_obj_set_style_text_align(text, LV_TEXT_ALIGN_LEFT, 0);
+    lv_obj_align_to(text, title, LV_ALIGN_OUT_BOTTOM_MID, 0, 20);
     text_timer = lv_timer_create(auto_return_cb, 10000, NULL);  // 10s
 
     // Start smooth scroll animation

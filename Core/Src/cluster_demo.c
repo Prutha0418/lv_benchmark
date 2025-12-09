@@ -188,16 +188,16 @@ static void cluster_anim_cb(lv_timer_t *t)
     	kmhValue = 3  + leftAnimFrame * 8;
     } else if (leftAnimFrame <= 10) {
     	gearValue = 2;
-    	kmhValue = 10 + (leftAnimFrame-4)*15;
+    	kmhValue = 10 + (leftAnimFrame-4) * 15;
     } else if (leftAnimFrame <= 20) {
     	gearValue = 3;
-    	kmhValue = 30 + (leftAnimFrame-10)*20/10;
+    	kmhValue = 30 + (leftAnimFrame-10) * 20 / 10;
     } else if (leftAnimFrame <= 30) {
     	gearValue = 4;
-    	kmhValue = 50 + (leftAnimFrame-20)*30/10;
+    	kmhValue = 50 + (leftAnimFrame-20) * 30 / 10;
     } else {
     	gearValue = 5;
-    	kmhValue = 80 + (leftAnimFrame-30)*40/9;
+    	kmhValue = 80 + (leftAnimFrame-30) * 40 / 9;
     }
 
     // RPM Needle
@@ -393,7 +393,7 @@ void cluster_demo_start(void)
     leftAnimFrame = 0;
     phase = Forward1;
 
-    anim_timer = lv_timer_create(cluster_anim_cb, 25, NULL);
+    anim_timer = lv_timer_create(cluster_anim_cb, 100, NULL);
 }
 
 void cluster_button_event_cb(lv_event_t *e)
